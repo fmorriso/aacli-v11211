@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "361e6250-9b74-4ff8-b630-1bf3739aab64"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -33,6 +36,17 @@
             "scripts": []
           },
           "configurations": {
+            "development": {
+              "optimization": false,
+              "outputHashing": "none",
+              "sourceMap": true,
+              "namedChunks": true,
+              "extractLicenses": true,
+              "vendorChunk": true,
+              "commonChunk": true,
+              "buildOptimizer": false,
+              "progress": true
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -45,8 +59,9 @@
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false,
+              "vendorChunk": true,
               "buildOptimizer": true,
+              "progress": true,
               "budgets": [
                 {
                   "type": "initial",
@@ -68,6 +83,9 @@
             "browserTarget": "aacli-v11211:build"
           },
           "configurations": {
+            "development": {
+              "browserTarget": "aacli-v11211:build:development"
+            },
             "production": {
               "browserTarget": "aacli-v11211:build:production"
             }
